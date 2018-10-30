@@ -38,6 +38,10 @@ const SearchInput = styled.input`
    color: white;
    opacity: 0.5;
   }
+  :focus { 
+    background-color: white;
+    outline: none;
+  }
   @media only screen and (min-width: 786px) {
     width: 250px;
   }
