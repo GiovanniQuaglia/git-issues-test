@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Header from './Components/Header';
 import Navbar from './Components/Navbar';
+import MainBody from './Components/MainBody';
 
 class App extends Component {
   constructor(props){
@@ -18,6 +19,7 @@ class App extends Component {
       <Wrapper>
         <Navbar />
         <Header sections={sections} selectedSection={selectedSection}/>
+        <MainBody />
       </Wrapper>
     );
   }
