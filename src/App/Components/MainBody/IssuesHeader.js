@@ -1,12 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const IssuesHeader = () => {
+  const headerText = 'Open';
   return(
     <IssuesHeaderBody>
-      Open
+      {headerText}
     </IssuesHeaderBody>
   )
+}
+
+IssuesHeader.propTypes = {
+  headerText: PropTypes.string,
 }
 
 const IssuesHeaderBody = styled.div`

@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const IssueItem = ({ issue }) => {
-  const { title, html_url , number, user } = issue;
+  const { title, html_url, number, user } = issue;
   return(
     <IssueWrapper>
       <Title href={html_url}>
@@ -13,6 +14,13 @@ const IssueItem = ({ issue }) => {
       </Details>
     </IssueWrapper>
   )
+}
+
+IssueItem.propTypes = {
+  title: PropTypes.string,
+  html_url: PropTypes.string,
+  number: PropTypes.number,
+  user: PropTypes.object,
 }
 
 const IssueWrapper = styled.div`

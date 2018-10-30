@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import Header from './Components/Header';
 import Navbar from './Components/Navbar';
@@ -23,6 +24,11 @@ class App extends Component {
       </Wrapper>
     );
   }
+}
+
+MainBody.App = {
+  sections: PropTypes.array.isRequired,
+  selectedSection: PropTypes.string.isRequired,
 }
 
 const Wrapper = styled.div`

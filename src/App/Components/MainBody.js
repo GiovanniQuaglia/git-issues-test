@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 import Loader from './MainBody/Loader';
 import IssuesHeader from './MainBody/IssuesHeader';
@@ -15,7 +16,7 @@ class MainBody extends Component {
       data: [],
       page: 1,
       isLoading: false,
-      error: null,
+      error: false,
     }
   }
 
@@ -42,25 +43,25 @@ class MainBody extends Component {
     }
   }
 
-  displayIssues = () => {
+  displayIssues = data => {
     return (
       <React.Fragment>
         <IssuesHeader />
         {
-          this.state.data.map(issue => <IssueItem issue= {issue} key={issue.number} />)
+          data.map(issue => <IssueItem issue= {issue} key={issue.number} />)
         }
       </React.Fragment>
     )
   }
 
   render() {
-    const { isLoading, error } = this.state;
+    const { isLoading, error, data } = this.state;
 
     return (
       <Wrapper>
         {isLoading ?
           <Loader /> :
-          this.displayIssues()
+          this.displayIssues(data)
         }
         {error &&
           <p>That's not good</p>
@@ -70,6 +71,11 @@ class MainBody extends Component {
   }
 }
 
+MainBody.porpTypes = {
+  data: PropTypes.object,
+  isLoading: PropTypes.bool.isRequired,
+  error: PropTypes.bool.isRequired,
+}
 
 const Wrapper = styled.div`
   width: 100%;

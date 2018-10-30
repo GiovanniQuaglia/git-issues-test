@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-const Header = props => {
+const Header = ({ sections, selectedSection }) => {
   return(
     <React.Fragment>
       <HeaderWrapper>
@@ -11,9 +12,9 @@ const Header = props => {
           <a href=''> React</a>
         </Breadcrumbs>
         <SectionsWrapper>
-          {props.sections.map(
+          {sections.map(
             section => {
-              if(section === props.selectedSection){
+              if(section === selectedSection){
                 return <Section key={section} className='selected'>{section}</Section>
               }
               return <Section key={section}>{section}</Section>
@@ -24,6 +25,11 @@ const Header = props => {
       <Divider />
     </React.Fragment>
   )
+}
+
+Header.propTypes = {
+  sections: PropTypes.array.isRequired,
+  selectedSection: PropTypes.string.isRequired,
 }
 
 const HeaderWrapper = styled.div`
