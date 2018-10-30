@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import axios from 'axios';
 
 import Loader from './MainBody/Loader';
+import IssuesHeader from './MainBody/IssuesHeader';
+import IssueItem from './MainBody/IssueItem';
 
 const API = 'https://api.github.com/repos/facebook/react/issues?page=';
 
@@ -40,16 +42,28 @@ class MainBody extends Component {
     }
   }
 
+  displayIssues = () => {
+    return (
+      <React.Fragment>
+        <IssuesHeader />
+        {
+          this.state.data.map(issue => <IssueItem issue= {issue} key={issue.number} />)
+        }
+      </React.Fragment>
+    )
+  }
+
   render() {
     const { isLoading, error } = this.state;
 
     return (
       <Wrapper>
-        {isLoading &&
-          <Loader />
+        {isLoading ?
+          <Loader /> :
+          this.displayIssues()
         }
         {error &&
-          <p>Molto male</p>
+          <p>That's not good</p>
         }
       </Wrapper>
     );
