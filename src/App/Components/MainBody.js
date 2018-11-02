@@ -63,7 +63,7 @@ class MainBody extends Component {
           this.displayIssues(data)
         }
         {error &&
-          <p>That's not good</p>
+          <p>This is not good</p>
         }
       </Wrapper>
     );
