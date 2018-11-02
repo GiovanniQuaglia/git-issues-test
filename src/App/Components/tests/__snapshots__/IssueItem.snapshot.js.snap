@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IssueWrapper Snapshot renders 1`] = `
+<div
+  className="sc-bdVaJa gvRItx"
+>
+  <a
+    className="sc-bwzfXH kiOXrk"
+    href="url"
+  >
+    title
+  </a>
+  <p
+    className="sc-htpNat cQAwFE"
+  >
+    #0 created by undefined
+  </p>
+</div>
+`;

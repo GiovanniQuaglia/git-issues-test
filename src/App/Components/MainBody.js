@@ -33,7 +33,6 @@ class MainBody extends Component {
       data: response.data,
       isLoading: false,
     });
-    console.log(response);
     }
     catch {
       this.setState({
@@ -48,7 +47,7 @@ class MainBody extends Component {
       <React.Fragment>
         <IssuesHeader />
         {
-          data.map(issue => <IssueItem issue= {issue} key={issue.number} />)
+          data.map(issue => <IssueItem issue={issue} key={issue.number} />)
         }
       </React.Fragment>
     )

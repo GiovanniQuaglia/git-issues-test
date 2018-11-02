@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import Logo from './../Images/logoWhite.png';
 
 const Navbar = () => {
   return(
     <NavBar>
-      <Image src={require('./../Images/logoWhite.png')} alt="" />
+      <Image src={Logo} alt="" />
       <SearchInput placeholder='Search' />
     </NavBar>
   )
